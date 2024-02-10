@@ -17,7 +17,7 @@ resource "aws_instance" "gateway" {
 
 resource "aws_key_pair" "gateway" {
   key_name   = "devops-gateway-server"
-  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFySoxplP9AJgU2T+xqSNV/0lIbmKU9Myeo3zBcU4F3R gateway@devops.co.uk"
+  public_key = "ssh-ed25519 xxxx"
 }
 
 resource "aws_eip" "gateway" {

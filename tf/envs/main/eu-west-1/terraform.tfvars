@@ -1,23 +1,23 @@
 aws_account_id     = "123456789876"
 environment        = "prod-gr"
 environment_ci     = "ci"
-vpc_id_ecs         = "vpc-xxxx"
-vpc_cidr           = "xxxx/20"
-vpc_cidr_secondary = "xxxx/23"
-vpc_cidr_ci        = "xxxx/23"
-vpc_cidr_ecs       = "xxxx/21"
-vpc_cidr_dev       = "xxxx/23"
-vpc_cidr_common    = "xxxx/24"
-vpc_cidr_int       = "xxxx/19"
-vpc_cidr_bi        = "xxxx/24"
+vpc_id_ecs         = "vpc-"
+vpc_cidr           = ""
+vpc_cidr_secondary = ""
+vpc_cidr_ci        = ""
+vpc_cidr_ecs       = ""
+vpc_cidr_dev       = ""
+vpc_cidr_common    = ""
+vpc_cidr_int       = "/19"
+vpc_cidr_bi        = ""
 
 route_table_ids_ecs = ["rtb-0b78e6973fb1c6e77", "rtb-058fd32614426722b"]
-office_private_cidr = ["xxxx/22", "xxxx/16", "xxxx/16", "xxxx/24", "xxxx/24"]
-jenkins_cidr        = ["xxxx/23"]
+office_private_cidr = ["/16", "/16", ""]
+jenkins_cidr        = [""]
 gateway_cidr        = ["10.249.95.10/32", "10.249.163.105/32"]
 openvpn_server_cidr = ["10.249.96.250/32", "52.215.241.136/32"]
-redshift_cidr       = ["xxxx/24", "xxxx/24", "52.18.80.118/32", "54.194.153.56/32", "10.249.70.29/32", "xxxx/24"]
-unknown_cidr        = ["34.243.84.243/32", "34.244.156.251/32", "34.244.222.179/32", "34.244.3.15/32", "34.244.90.197/32", "34.246.180.223/32", "34.247.92.6/32", "34.249.239.215/32", "52.208.152.67/32", "54.194.180.108/32", "54.229.124.1/32", "xxxx/24"]
+redshift_cidr       = ["52.18.80.118/32", "54.194.153.56/32", "10.249.70.29/32", ""]
+unknown_cidr        = ["34.243.84.243/32", "34.244.156.251/32", "34.244.222.179/32", "34.244.3.15/32", "34.244.90.197/32", "34.246.180.223/32", "34.247.92.6/32", "34.249.239.215/32", "52.208.152.67/32", "54.194.180.108/32", "54.229.124.1/32", ""]
 
 # sonarqube variables
 r53_devdevops_co_uk = "Z2MONX8ELB3DL5"
@@ -39,69 +39,69 @@ memory_autoscaling_policy = {
 # PEERINGS
 peering_requests_green = {
   vpc-green-to-vpc-ci-eu-west-1 = {
-    peer_vpc_id            = "vpc-xxxx"
+    peer_vpc_id            = "vpc-"
     peer_owner_id          = "123456789876"
-    destination_cidr_block = "xxxx/23"
+    destination_cidr_block = ""
     peer_region            = "eu-west-1"
   }
   vpc-green-to-vpc-bi-tooling-eu-west-1 = {
-    peer_vpc_id            = "vpc-xxxx"
+    peer_vpc_id            = "vpc-"
     peer_owner_id          = "587854172176"
-    destination_cidr_block = "xxxx/16"
+    destination_cidr_block = "/16"
     peer_region            = "eu-west-1"
   }
   vpc-green-to-vpc-dev-int-eu-west-1 = {
-    peer_vpc_id            = "vpc-xxxx"
+    peer_vpc_id            = "vpc-"
     peer_owner_id          = "123456789876"
-    destination_cidr_block = "xxxx/19"
+    destination_cidr_block = "/19"
     peer_region            = "eu-west-1"
   }
   vpc-green-to-vpc-common-eu-west-1 = {
-    peer_vpc_id            = "vpc-xxxx"
+    peer_vpc_id            = "vpc-"
     peer_owner_id          = "123456789876"
-    destination_cidr_block = "xxxx/24"
+    destination_cidr_block = ""
     peer_region            = "eu-west-1"
   }
 }
 
 peering_requests_green_ecs = {
   vpc-green-ecs-to-vpc-green-eu-west-1 = {
-    peer_vpc_id            = "vpc-xxxx"
+    peer_vpc_id            = "vpc-"
     peer_owner_id          = "123456789876"
-    destination_cidr_block = "xxxx/20"
+    destination_cidr_block = ""
     peer_region            = "eu-west-1"
   }
   vpc-green-ecs-to-vpc-ci-eu-west-1 = {
-    peer_vpc_id            = "vpc-xxxx"
+    peer_vpc_id            = "vpc-"
     peer_owner_id          = "123456789876"
-    destination_cidr_block = "xxxx/23"
+    destination_cidr_block = ""
     peer_region            = "eu-west-1"
   }
   vpc-green-ecs-to-vpc-common-eu-west-1 = {
-    peer_vpc_id            = "vpc-xxxx"
+    peer_vpc_id            = "vpc-"
     peer_owner_id          = "123456789876"
-    destination_cidr_block = "xxxx/24"
+    destination_cidr_block = ""
     peer_region            = "eu-west-1"
   }
   vpc-green-ecs-to-vpc-dev-int-eu-west-1 = {
-    peer_vpc_id            = "vpc-xxxx"
+    peer_vpc_id            = "vpc-"
     peer_owner_id          = "123456789876"
-    destination_cidr_block = "xxxx/19"
+    destination_cidr_block = "/19"
     peer_region            = "eu-west-1"
   }
 }
 
 peering_requests_ci = {
   vpc-ci-to-vpc-dev-int-eu-west-1 = {
-    peer_vpc_id            = "vpc-xxxx"
+    peer_vpc_id            = "vpc-"
     peer_owner_id          = "123456789876"
-    destination_cidr_block = "xxxx/19"
+    destination_cidr_block = "/19"
     peer_region            = "eu-west-1"
   }
   vpc-ci-to-vpc-common-eu-west-1 = {
-    peer_vpc_id            = "vpc-xxxx"
+    peer_vpc_id            = "vpc-"
     peer_owner_id          = "123456789876"
-    destination_cidr_block = "xxxx/24"
+    destination_cidr_block = ""
     peer_region            = "eu-west-1"
   }
 }
@@ -109,72 +109,72 @@ peering_requests_ci = {
 peering_accept_green = {
   vpc-green-from-vpc-bi = {
     pcx_id                 = "pcx-06b7921948c5e45a3"
-    destination_cidr_block = "xxxx/24"
+    destination_cidr_block = ""
   }
 }
 
 peering_accept_ci = {
   vpc-ci-from-vpc-bi = {
     pcx_id                 = "pcx-07b0b0718948a58ea"
-    destination_cidr_block = "xxxx/24"
+    destination_cidr_block = ""
   }
   vpc-ci-from-vpc-development = {
     pcx_id                 = "pcx-0cc66bbf3161cce8d"
-    destination_cidr_block = "xxxx/21"
+    destination_cidr_block = ""
   }
   vpc-ci-from-vpc-nxt = {
     pcx_id                 = "pcx-031ed7a8ae8522d96"
-    destination_cidr_block = "xxxx/22"
+    destination_cidr_block = ""
   }
 }
 
 peering_accept_dev_int = {
   vpc-dev-int-from-vpc-bi = {
     pcx_id                 = "pcx-0af4896f42b928c9d"
-    destination_cidr_block = "xxxx/24"
+    destination_cidr_block = ""
   }
   vpc-dev-int-from-vpc-development = {
     pcx_id                 = "pcx-0f423322dda56f477"
-    destination_cidr_block = "xxxx/21"
+    destination_cidr_block = ""
   }
   vpc-dev-int-from-vpc-nxt = {
     pcx_id                 = "pcx-09b3246ffb4b46d2e"
-    destination_cidr_block = "xxxx/22"
+    destination_cidr_block = ""
   }
   vpc-dev-int-from-vpc-common = {
     pcx_id                 = "pcx-283ff941"
-    destination_cidr_block = "xxxx/24"
+    destination_cidr_block = ""
   }
   vpc-dev-int-from-vpc-prod = {
     pcx_id                 = "pcx-3a15f753"
-    destination_cidr_block = "xxxx/22"
+    destination_cidr_block = ""
   }
   vpc-dev-int-from-vpc-dev-01 = {
     pcx_id                 = "pcx-cf99bfa6"
-    destination_cidr_block = "xxxx/23"
+    destination_cidr_block = ""
   }
 }
 
 peering_accept_common = {
   vpc-common-from-vpc-bi = {
     pcx_id                 = "pcx-096b022167187c018"
-    destination_cidr_block = "xxxx/24"
+    destination_cidr_block = ""
   }
   vpc-common-from-vpc-development = {
     pcx_id                 = "pcx-0fd6509d1e485142d"
-    destination_cidr_block = "xxxx/21"
+    destination_cidr_block = ""
   }
   vpc-common-from-vpc-nxt = {
     pcx_id                 = "pcx-0860bada540f991ce"
-    destination_cidr_block = "xxxx/22"
+    destination_cidr_block = ""
   }
   vpc-common-from-vpc-dev-01 = {
     pcx_id                 = "pcx-3463425d"
-    destination_cidr_block = "xxxx/23"
+    destination_cidr_block = ""
   }
   vpc-common-from-vpc-bi-tooling = {
     pcx_id                 = "pcx-0e71ff316f544ce91"
-    destination_cidr_block = "xxxx/16"
+    destination_cidr_block = "/16"
   }
 }
 
@@ -268,22 +268,22 @@ sqs = {
 
 load_balancer_target_groups = {
   "prod-gr-dac" = {
-    lb = "app/prod-gr-internal-alb/xxxx"
-    tg = "targetgroup/ls-prod-gr-dac/xxxx"
+    lb = "app/prod-gr-internal-alb/"
+    tg = "targetgroup/ls-prod-gr-dac/"
   }
   "ls-prod-gr-payment" = {
-    tg = "targetgroup/ls-prod-gr-payment/xxxx"
+    tg = "targetgroup/ls-prod-gr-payment/"
   }
   "ls-prod-gr-sailthru-batch" = {
-    lb = "app/prod-gr-internal-alb/xxxx"
-    tg = "targetgroup/ls-prod-gr-sailthru-batch/xxxx"
+    lb = "app/prod-gr-internal-alb/"
+    tg = "targetgroup/ls-prod-gr-sailthru-batch/"
   }
   "prod-gr-affiliate-email" = {
-    lb = "app/prod-gr-internal-alb/xxxx"
-    tg = "targetgroup/prod-gr-affiliate-email/xxxx"
+    lb = "app/prod-gr-internal-alb/"
+    tg = "targetgroup/prod-gr-affiliate-email/"
   }
   "prod-gr-affiliate-email-api" = {
-    lb = "app/prod-gr-internal-alb/xxxx"
-    tg = "targetgroup/prod-gr-affiliate-email-api/xxxx"
+    lb = "app/prod-gr-internal-alb/"
+    tg = "targetgroup/prod-gr-affiliate-email-api/"
   }
 }

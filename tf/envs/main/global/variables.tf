@@ -279,7 +279,7 @@ variable "buckets" {
       sqs_notification      = null
       bucket_policy         = null
     }
-    "cordial-bl.devops.co.uk" = {
+    "cordial-bl.devops.com" = {
       create_acl              = true
       create_logging          = false
       create_encryption       = false
@@ -307,7 +307,7 @@ variable "buckets" {
             "POST",
           ]
           allowed_origins = [
-            "https://*.devops.co.uk",
+            "https://*.devops.com",
           ]
           allowed_headers = [
             "*",
@@ -328,7 +328,7 @@ variable "buckets" {
                 "AWS": "*"
             },
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::cordial-bl.devops.co.uk/*",
+            "Resource": "arn:aws:s3:::cordial-bl.devops.com/*",
             "Condition": {
                 "IpAddress": {
                     "aws:SourceIp": [
@@ -341,7 +341,7 @@ variable "buckets" {
 }
 EOT
     }
-    "citrusad.devops.co.uk" = {
+    "citrusad.devops.com" = {
       create_acl              = true
       create_logging          = true
       create_encryption       = false
@@ -357,8 +357,8 @@ EOT
       ignore_public_acls      = false
       restrict_public_buckets = false
       versioning              = "Enabled"
-      target_bucket           = "logs.devops.co.uk"
-      target_prefix           = "citrusad.devops.co.uk/"
+      target_bucket           = "logs.devops.com"
+      target_prefix           = "citrusad.devops.com/"
       sse_algorithm           = null
       lifecycle_rules         = null
       expected_bucket_owner   = null
@@ -375,7 +375,7 @@ EOT
                 "AWS": "*"
             },
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::citrusad.devops.co.uk/*",
+            "Resource": "arn:aws:s3:::citrusad.devops.com/*",
             "Condition": {
                 "IpAddress": {
                     "aws:SourceIp": [
@@ -391,15 +391,15 @@ EOT
             },
             "Action": "s3:*",
             "Resource": [
-                "arn:aws:s3:::citrusad.devops.co.uk",
-                "arn:aws:s3:::citrusad.devops.co.uk/*"
+                "arn:aws:s3:::citrusad.devops.com",
+                "arn:aws:s3:::citrusad.devops.com/*"
             ]
         }
     ]
 }
 EOT
     }
-    "citrusadtest.devdevops.co.uk" = {
+    "citrusadtest.devdevops.com" = {
       create_acl              = true
       create_logging          = true
       create_encryption       = true
@@ -416,7 +416,7 @@ EOT
       restrict_public_buckets = false
       versioning              = null
       target_bucket           = "logs-devops-main"
-      target_prefix           = "citrusadtest.devdevops.co.uk/"
+      target_prefix           = "citrusadtest.devdevops.com/"
       sse_algorithm           = "aws:kms"
       lifecycle_rules         = null
       expected_bucket_owner   = null
@@ -433,8 +433,8 @@ EOT
             },
             "Action": "s3:*",
             "Resource": [
-                "arn:aws:s3:::citrusadtest.devdevops.co.uk",
-                "arn:aws:s3:::citrusadtest.devdevops.co.uk/*"
+                "arn:aws:s3:::citrusadtest.devdevops.com",
+                "arn:aws:s3:::citrusadtest.devdevops.com/*"
             ]
         }
     ]
@@ -457,7 +457,7 @@ EOT
       ignore_public_acls      = true
       restrict_public_buckets = true
       versioning              = null
-      target_bucket           = "logs.devops.co.uk"
+      target_bucket           = "logs.devops.com"
       target_prefix           = "devops-blue-green-prod-deployments/"
       sse_algorithm           = "aws:kms"
       lifecycle_rules         = null
@@ -516,7 +516,7 @@ EOT
 }
 EOT
     }
-    "cordial.devops.co.uk" = {
+    "cordial.devops.com" = {
       create_acl              = true
       create_logging          = true
       create_encryption       = false
@@ -532,8 +532,8 @@ EOT
       ignore_public_acls      = false
       restrict_public_buckets = false
       versioning              = null
-      target_bucket           = "logs.devops.co.uk"
-      target_prefix           = "cordial.devops.co.uk/"
+      target_bucket           = "logs.devops.com"
+      target_prefix           = "cordial.devops.com/"
       sse_algorithm           = null
       lifecycle_rules         = null
       expected_bucket_owner   = null
@@ -544,7 +544,7 @@ EOT
             "POST",
           ]
           allowed_origins = [
-            "https://*.devops.co.uk",
+            "https://*.devops.com",
           ]
           allowed_headers = [
             "*",
@@ -567,7 +567,7 @@ EOT
         "AWS": "*"
       },
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::cordial.devops.co.uk/*",
+      "Resource": "arn:aws:s3:::cordial.devops.com/*",
       "Condition": {
         "IpAddress": {
           "aws:SourceIp": [
@@ -660,7 +660,7 @@ EOT
       }
       bucket_policy = null
     }
-    "logs.devops.co.uk" = {
+    "logs.devops.com" = {
       create_acl          = true
       create_logging      = true
       create_encryption   = false
@@ -765,7 +765,7 @@ EOT
                 "AWS": "arn:aws:iam::123456789876:root"
             },
             "Action": "s3:PutObject",
-            "Resource": "arn:aws:s3:::logs.devops.co.uk/prod-gr/AWSLogs/123456789876/*"
+            "Resource": "arn:aws:s3:::logs.devops.com/prod-gr/AWSLogs/123456789876/*"
         }
     ]
 }
@@ -878,7 +878,7 @@ EOT
   }
 EOT
     }
-    "jobs.devops.co.uk" = {
+    "jobs.devops.com" = {
       create_acl              = false
       create_logging          = false
       create_encryption       = false
@@ -912,13 +912,13 @@ EOT
                 "AWS": "*"
             },
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::jobs.devops.co.uk/*"
+            "Resource": "arn:aws:s3:::jobs.devops.com/*"
         }
     ]
 }
 EOT
     }
-    "booking-calendar-admin.devdevops.co.uk" = {
+    "booking-calendar-admin.devdevops.com" = {
       create_acl              = false
       create_logging          = false
       create_encryption       = false
@@ -951,7 +951,7 @@ EOT
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:*",
-            "Resource": "arn:aws:s3:::booking-calendar-admin.devdevops.co.uk/*",
+            "Resource": "arn:aws:s3:::booking-calendar-admin.devdevops.com/*",
             "Condition": {
                 "IpAddress": {
                     "aws:SourceIp": [
@@ -1071,7 +1071,7 @@ EOT
 }
 EOT
     }
-    "static.devops.co.uk" = {
+    "static.devops.com" = {
       create_acl              = false
       create_logging          = false
       create_encryption       = false
@@ -1116,7 +1116,7 @@ EOT
                 "AWS": "*"
             },
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::static.devops.co.uk/*"
+            "Resource": "arn:aws:s3:::static.devops.com/*"
         },
         {
             "Sid": "DelegateS3Access",
@@ -1129,8 +1129,8 @@ EOT
                 "s3:GetObject"
             ],
             "Resource": [
-                "arn:aws:s3:::static.devops.co.uk/*",
-                "arn:aws:s3:::static.devops.co.uk"
+                "arn:aws:s3:::static.devops.com/*",
+                "arn:aws:s3:::static.devops.com"
             ]
         }
     ]
@@ -1177,7 +1177,7 @@ EOT
 }
 EOT
     }
-    "booking-calendar-admin.nxtdevops.co.uk" = {
+    "booking-calendar-admin.nxtdevops.com" = {
       create_acl              = false
       create_logging          = false
       create_encryption       = false
@@ -1210,7 +1210,7 @@ EOT
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:*",
-            "Resource": "arn:aws:s3:::booking.devops.co.uk/*",
+            "Resource": "arn:aws:s3:::booking.devops.com/*",
             "Condition": {
                 "IpAddress": {
                     "aws:SourceIp": [
@@ -1277,7 +1277,7 @@ EOT
 }
 EOT
     }
-    "video.devops.co.uk" = {
+    "video.devops.com" = {
       create_acl              = true
       create_logging          = true
       create_encryption       = false
@@ -1293,8 +1293,8 @@ EOT
       ignore_public_acls      = true
       restrict_public_buckets = true
       versioning              = "Enabled"
-      target_bucket           = "logs.devops.co.uk"
-      target_prefix           = "video.devops.co.uk/"
+      target_bucket           = "logs.devops.com"
+      target_prefix           = "video.devops.com/"
       sse_algorithm           = null
       lifecycle_rules = {
         rule_1 = {
@@ -1316,7 +1316,7 @@ EOT
             "POST"
           ]
           allowed_origins = [
-            "https://*.devops.co.uk",
+            "https://*.devops.com",
           ]
           allowed_headers = [
             "*",
@@ -1337,7 +1337,7 @@ EOT
                 "AWS": "*"
             },
             "Action": "s3:*",
-            "Resource": "arn:aws:s3:::video.devops.co.uk/*"
+            "Resource": "arn:aws:s3:::video.devops.com/*"
         },
         {
             "Sid": "PublicReadForGetBucketObjects",
@@ -1346,7 +1346,7 @@ EOT
                 "AWS": "*"
             },
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::video.devops.co.uk/*",
+            "Resource": "arn:aws:s3:::video.devops.com/*",
             "Condition": {
                 "IpAddress": {
                     "aws:SourceIp": [
@@ -1359,7 +1359,7 @@ EOT
 }
 EOT
     }
-    "video02.nxtdevops.co.uk" = {
+    "video02.nxtdevops.com" = {
       create_acl              = true
       create_logging          = true
       create_encryption       = false
@@ -1375,8 +1375,8 @@ EOT
       ignore_public_acls      = false
       restrict_public_buckets = false
       versioning              = null
-      target_bucket           = "logs.devops.co.uk"
-      target_prefix           = "video.devops.co.uk/"
+      target_bucket           = "logs.devops.com"
+      target_prefix           = "video.devops.com/"
       sse_algorithm           = null
       lifecycle_rules = {
         rule_1 = {
@@ -1398,7 +1398,7 @@ EOT
             "POST"
           ]
           allowed_origins = [
-            "https://*.nxtdevops.co.uk",
+            "https://*.nxtdevops.com",
           ]
           allowed_headers = [
             "*",
@@ -1419,7 +1419,7 @@ EOT
         "AWS": "*"
       },
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::video02.nxtdevops.co.uk/*",
+      "Resource": "arn:aws:s3:::video02.nxtdevops.com/*",
       "Condition": {
         "IpAddress": {
           "aws:SourceIp": [
